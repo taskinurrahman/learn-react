@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+}
+.post{
+    background: rosybrown;
+    flex-direction: column;
+    margin: 5px;
+}
+.title{
+    font-size: 50px;
+}
+
+.author{
+    font-size: 25px;
+    font-style: italic;
+}
