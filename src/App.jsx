@@ -1,11 +1,15 @@
-import './App.css'
-import PostList from "./components/PostList.jsx";
+import Expenses from "./components/Expenses.jsx";
 
-function App() {
-   return (
-       <PostList/>
-   )
-   
+const App = () => {
+    return (
+
+        <div>
+            <h1>Let's Get started</h1>
+            <Expenses/>
+        </div>
+
+    )
+
 
 }
 
