@@ -1,32 +1,36 @@
 import './NewExpense.css'
 import {useState} from "react";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
 
     const [title,setTitle] = useState('')
     const [amount,setAmount] = useState('')
     const [date,setDate] = useState('')
+
     const titleChangeHandler = (event)=>{
         setTitle(()=>event.target.value)
-        console.log(title)
     }
     const amountChangeHandler = (event)=>{
         setAmount(()=>event.target.value)
-        console.log(amount)
     }
     const dateChangeHandler = (event)=>{
         setDate(()=>event.target.value)
-        console.log(date)
     }
 
     function formatSubmitHandler(event) {
         event.preventDefault()
-        console.log({
-            title,amount,date
-        })
-        setTitle(()=>'')
-        setAmount(()=>'')
-        setDate(()=>'')
+
+        const expenseData = {
+            id:'f1',
+            title:title,
+            amount:amount,
+            date: new Date(date),
+        };
+        props.onSaveExpense(expenseData)
+
+        setTitle('')
+        setAmount('')
+        setDate('')
     }
 
     return (
